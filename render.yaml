@@ -1,0 +1,7 @@
+services:
+ - type: web
+   name: View-source-API
+   env: python
+   buildCommand: "pip install requirement.txt"
+   startCommand: "gunicorn main:app"
+   pla: free
