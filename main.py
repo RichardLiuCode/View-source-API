@@ -15,7 +15,7 @@ def api():
   url = request.args.get('site')
   try:
     headers = {
-        "User-Agent": "Mozilla/5.0"  # 偽裝成瀏覽器
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0"
     }
     data = requests.get(url, headers=headers)
     return jsonify({"html":data.text})
