@@ -20,7 +20,7 @@ def api():
     data = requests.get(url, headers=headers)
     return jsonify({"html":data.text})
   except Exception as e:
-    return "Error:" + str(e), 400
+    return jsonify({"html":undefind,"error:" + str(e)}), 400
 
 if __name__ == "__main__":
   port = int (os.environ.get("PORT", 5000))
