@@ -14,7 +14,10 @@ def index():
 def api():
   url = request.args.get('site')
   try:
-    data = requests.get(url)
+    headers = {
+        "User-Agent": "Mozilla/5.0"  # 偽裝成瀏覽器
+    }
+    data = requests.get(url, headers=headers)
     return jsonify({"html":data.text})
   except Exception as e:
     return "Error:" + str(e), 400
