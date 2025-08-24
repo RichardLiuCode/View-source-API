@@ -36,7 +36,7 @@ def api():
       return jsonify({"html":"","error": str(e)}), 400
       
 @app.route("/html", methods=['GET'])
-def api():
+def html_page():
   url = request.args.get('site')
   if url == "":
     return ("Please provide the URL"), 400
