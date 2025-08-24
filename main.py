@@ -35,7 +35,7 @@ def api():
     except Exception as e:
       return jsonify({"html":"","error": str(e)}), 400
       
-@app.route("html", methods=['GET'])
+@app.route("/html", methods=['GET'])
 def api():
   url = request.args.get('site')
   if url == "":
